@@ -1,0 +1,7 @@
+$width:400px;
+$background_color:yellow;
+.d1{
+    width: $width;
+    height: $width/2;
+    background-color: $background_color;
+}

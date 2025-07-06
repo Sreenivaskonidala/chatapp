@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>browser event demo</h1>
+    <button id="click"> click me</button>
+    <div id="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, tenetur?</div>
+    <script>
+        document.getElementById("click").addEventListener("clic",function(){
+            alert("0123");
+        })
+         document.getElementById("box").addEventListener("mouseover",function(){
+            this.style.background="green";
+         })
+          document.getElementById("box").addEventListener("mouseout",function(){
+            this.style.background="purple";
+         })
+    </script>
+</body>
+</html>

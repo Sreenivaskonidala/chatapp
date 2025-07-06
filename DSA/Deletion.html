@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList Example</title>
+</head>
+<body>
+    <script>
+        class Node {
+            constructor(data) {
+                this.prev=null;
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+                this.size = 0;
+            }
+
+            insert(data) {
+                const node = new Node(data);
+                if (this.head === null) {
+                    this.head = node;
+                } else {
+                    let current = this.head;
+                    while (current.next !== null) {
+                        current = current.next;
+                    }
+                    current.next = node;
+                }
+                this.size++;
+            }
+              traverse() {
+                let current = this.head;
+                while (current !== null) {
+                    console.log(current.data);
+                    current = current.next;
+                }
+            }
+
+            delete(){
+                if(this.head==null){
+                    console.log("Linked list is empty");
+                }
+                else{
+                    var node=this.head;
+                    if(node.next==null){
+                        this.head=null;
+                    }else{
+                    while(node.next.next!=null){
+                        node=node.next;
+                    }
+                    node.next=null;
+                }
+                this.size--;
+            }
+        }
+        }
+
+        const list1 = new LinkedList();
+        list1.insert(56);
+        list1.insert(75);
+        list1.insert("apple");
+        list1.insert("kiwi");
+        list1.traverse();
+        list1.delete()
+        console.log(list1);
+    </script>
+</body>
+</html>

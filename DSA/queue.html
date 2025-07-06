@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Output</title>
+</head>
+<body>
+    <script>
+        class Queue {
+            constructor() {
+                this.count = 0;
+                this.lowestCount = 0;
+                this.items = {};
+            }
+
+            enqueue(element) {
+                this.items[this.count] = element;
+                this.count++;
+            }
+
+            dequeue() {
+                if (this.isEmpty()) {
+                    return undefined;
+                }
+                let result = this.items[this.lowestCount];
+                delete this.items[this.lowestCount];
+                this.lowestCount++;
+                return result;
+            }
+
+            peek() {
+                if (this.isEmpty()) {
+                    return undefined;
+                }
+                return this.items[this.lowestCount];
+            }
+
+            isEmpty() {
+                return this.count - this.lowestCount === 0;
+            }
+        }
+
+        var q = new Queue();
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+
+        console.log("Dequeued element:", q.dequeue()); // 10
+        console.log("Element at front (peek):", q.peek()); // 20
+        console.log("Current Queue object:", q);
+    </script>
+</body>
+</html>

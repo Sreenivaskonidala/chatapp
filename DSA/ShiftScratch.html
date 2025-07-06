@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits=["orange","mango","apple","guava"];
+        function shift(arr){
+            let newArr=[];
+            for(var i=0;i<arr.length-1;i++){
+                newArr[i]=arr[i+1];
+
+            }
+            return newArr;
+        }
+        console.log(`arr before:${fruits}`);
+        fruits=shift(fruits);
+        console.log(`after array ${fruits}`);
+    </script>
+</body>
+</html>

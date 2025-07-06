@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList Example</title>
+</head>
+<body>
+    <script>
+        class Node {
+            constructor(data) {
+                this.prev=null;
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        class DoublyLinkedList {
+            constructor() {
+                this.head = null;
+                this.size = 0;
+            }
+
+            insert(data) {
+                const node = new Node(data);
+                if (this.head === null) {
+                    this.head = node;
+                } else {
+                    let current = this.head;
+                    while (current.next !== null) {
+                        current = current.next;
+                    }
+                    current.next = node;
+                    node.prev=current;
+                }
+                this.size++;
+            }
+              traverse() {
+                let current = this.head;
+                while (current !== null) {
+                    console.log(current.data);
+                    current = current.next;
+                }
+            }
+            search(data){
+                let node=this.head;
+                let count=1;
+                while(node.next!=null){
+                    if(node.data==data){
+                        console.log(`${node.data}found at position-->${count}`);
+                    }
+                    node=node.next;
+                    count++;
+                }
+                    if(node.data==data){
+                        console.log(`${node.data}found at position-->${count}`);
+                    }
+            }
+        }
+
+        const list1 = new DoublyLinkedList();
+        list1.insertEnd(56);
+        list1.insertEnd(75);
+        list1.insertEnd("apple");
+        list1.insertEnd("kiwi");
+        list1.search('56')
+        console.log(list1);
+    </script>
+</body>
+</html>

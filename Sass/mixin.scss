@@ -1,0 +1,18 @@
+@mixin special-feature{
+    background-color: green;
+    color: black;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn1{
+    @include special-featu
+}
+.btn2{
+    @include special-featu
+}
+.btn3{
+    @include special-featu
+}

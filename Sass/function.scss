@@ -1,0 +1,11 @@
+@function lighten-color($color,$amount){
+    @return lighten($color,$amount )
+}
+$base-color:red;
+.bright-text{
+    background-color: lighten-color($base-color,30% );
+}
+$base-color:red;
+.dark-text{
+    background-color: lighten-color($base-color,60% );
+}

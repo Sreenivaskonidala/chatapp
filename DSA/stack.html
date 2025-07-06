@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[1,3,6,7,8,10,5];
+        var arr1=[];
+        class Stack{
+            constructor(stack){
+                this.stack=stack;
+            }
+            peek(){
+                if(this.stack.length===0){
+                    console.log("stack underflow");
+                    return;
+                }
+                const top=((this.stack).length)-1;
+                return ((this.stack)[top]);
+            }
+        }
+        var s1=new Stack(arr);
+        var s2=new Stack(arr1);
+        console.log(s1.peek());1
+        console.log(s2.peek());
+    </script>
+</body>
+</html>
